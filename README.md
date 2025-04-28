@@ -22,5 +22,5 @@
        └── async/
           └── chat GPT coroutines & asincio.pdf
 
-### build tree
+### Build tree
 ` treee -l 4 -o out.txt --base knowledge_base -f`
