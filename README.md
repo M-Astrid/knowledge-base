@@ -4,7 +4,7 @@
 
 - [Knowledge Base](#knowledge-base)
   - [Contents](#contents)
-  - [build tree](#build-tree)
+  - [Build tree](#build-tree)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -15,12 +15,14 @@
 ### Contents
 
     knowledge_base
-    ├── architecture design/
-    |  └── gof patterns/
-    |     └── creational.md
-    └── python/
-       └── async/
-          └── chat GPT coroutines & asincio.pdf
+        ├── architecture_design/
+        |  └── gof_patterns/
+        |     ├── behavioral.md
+        |     ├── creational.md
+        |     └── structural.md
+        ├── go/
+        └── python/
+           └── async/
 
 ### Build tree
 ` treee -l 4 -o out.txt --base knowledge_base -f`
