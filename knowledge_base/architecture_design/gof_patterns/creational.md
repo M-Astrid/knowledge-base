@@ -1,3 +1,6 @@
+Here's the text with all the labels translated to English, while leaving the rest of the content unchanged:
+
+```markdown
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -20,9 +23,9 @@ class Singleton:
     _instance = None
 
     def __new__(cls, *args, **kwargs):
-        # Проверяем, существует ли уже экземпляр
+        # Check if an instance already exists
         if cls._instance is None:
-            # Если нет, создаем новый экземпляр
+            # If not, create a new instance
             cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
 ```
@@ -68,7 +71,7 @@ class ComputerBuilder:
         return self.computer
 
 
-# Пример использования
+# Example usage
 if __name__ == "__main__":
     builder = ComputerBuilder()
     my_computer = (builder
@@ -111,7 +114,7 @@ class AnimalFactory:
 ```python
 import copy
 
-# Класс прямоугольника
+# Rectangle class
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -123,7 +126,7 @@ class Rectangle:
     def __str__(self):
         return f"Rectangle({self.width}, {self.height})"
 
-    # Метод для клонирования объекта
+    # Method for cloning the object
     def clone(self):
         return copy.deepcopy(self)
 ```
@@ -132,39 +135,39 @@ class Rectangle:
 ```python
 from abc import ABC, abstractmethod
 
-# Интерфейс для окна
+# Interface for Window
 class Window(ABC):
     @abstractmethod
     def draw(self):
         pass
 
-# Интерфейс для полосы прокрутки
+# Interface for Scrollbar
 class Scrollbar(ABC):
     @abstractmethod
     def scroll(self):
         pass
 
-# Реализация окна для macOS
+# Implementation of Window for macOS
 class MacOSWindow(Window):
     def draw(self):
         return "Drawing a macOS Window"
 
-# Реализация полосы прокрутки для macOS
+# Implementation of Scrollbar for macOS
 class MacOSScrollbar(Scrollbar):
     def scroll(self):
         return "Scrolling in macOS Scrollbar"
 
-# Реализация окна для Windows
+# Implementation of Window for Windows
 class WindowsWindow(Window):
     def draw(self):
         return "Drawing a Windows Window"
 
-# Реализация полосы прокрутки для Windows
+# Implementation of Scrollbar for Windows
 class WindowsScrollbar(Scrollbar):
     def scroll(self):
         return "Scrolling in Windows Scrollbar"
 
-# Интерфейс абстрактной фабрики
+# Abstract Factory interface
 class GUIFactory(ABC):
     @abstractmethod
     def create_window(self) -> Window:
@@ -174,7 +177,7 @@ class GUIFactory(ABC):
     def create_scrollbar(self) -> Scrollbar:
         pass
 
-# Фабрика для macOS
+# Factory for macOS
 class MacOSFactory(GUIFactory):
     def create_window(self) -> Window:
         return MacOSWindow()
@@ -182,7 +185,7 @@ class MacOSFactory(GUIFactory):
     def create_scrollbar(self) -> Scrollbar:
         return MacOSScrollbar()
 
-# Фабрика для Windows
+# Factory for Windows
 class WindowsFactory(GUIFactory):
     def create_window(self) -> Window:
         return WindowsWindow()
