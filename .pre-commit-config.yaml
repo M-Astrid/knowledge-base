@@ -5,8 +5,8 @@ repos:
     -   id: doctoc
 -   repo: local
     hooks:
-      - id: my-custom-sort
+      - id: contents-aggregator
         name: contents-aggregator
         entry: "python ./contents-composite.py"
         language: python
-        args: [--output, t.txt]
+        args: [--output, contents.txt, --depth, "5"]

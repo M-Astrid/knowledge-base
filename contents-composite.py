@@ -128,10 +128,12 @@ class HTMLRenderer(Renderer):
 
 class TextRenderer(Renderer):
     prefix_template: str = "{'  '*depth}{char} "
+    ident_char: str = "  "
+    end_char = "  \n"
 
     def __call__(self, leaf: Leaf, **kwargs):
         # content = leaf.get_content()
-        # output = self.prefix_template.format(char="└─" if content.depth == 0 else "├─", depth=content.depth)
+        # output = self.prefix_template.format(char="└─" if content.depth == 0 else "├─", ident=content.depth*self.ident_char)
         raise NotImplementedError
 
 
@@ -142,7 +144,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--format', type=str, default='md', choices=['md', 'txt'], help="Формат вывода: текст или markdown.")
     parser.add_argument('--depth', type=int, default=DEFAULT_DEPTH, help="Максимальная глубина обхода.")
-    parser.add_argument('--output', type=str, default="output.txt", help="Имя файла для вывода результата.")
+    parser.add_argument('--output', type=str, default=None, help="Имя файла для вывода результата.")
 
     args = parser.parse_known_args()[0]
 
@@ -154,8 +156,8 @@ if __name__ == "__main__":
 
     formatted = render(tree, is_links=True, depth=depth)
 
-    # if args.output:
-    with open(args.output, 'w') as f:
-        f.write(formatted)
-    # else:
-    #     print(formatted)
+    if args.output:
+        with open(args.output, 'w') as f:
+            f.write(formatted)
+    else:
+        print(formatted)
