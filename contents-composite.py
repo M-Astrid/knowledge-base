@@ -142,13 +142,20 @@ if __name__ == "__main__":
 
     parser.add_argument('--format', type=str, default='md', choices=['md', 'txt'], help="Формат вывода: текст или markdown.")
     parser.add_argument('--depth', type=int, default=DEFAULT_DEPTH, help="Максимальная глубина обхода.")
+    parser.add_argument('--output', type=str, default=None, help="Имя файла для вывода результата.")
 
-    args = parser.parse_args()
+    args = parser.parse_known_args()[0]
 
     depth, format_ = args.depth, args.format
 
-    presenter = MDRenderer() if format_ == 'md' else TextRenderer()
+    render = MDRenderer() if format_ == 'md' else TextRenderer()
     project = Project("knowledge_base", max_depth=depth)
     tree = project.get_content()
 
-    print(presenter(tree, is_links=True, depth=depth))
+    formatted = render(tree, is_links=True, depth=depth)
+
+    if args.output:
+        with open(args.output, 'w') as f:
+            f.write(formatted)
+    else:
+        print(formatted)

@@ -6,7 +6,7 @@ repos:
 -   repo: local
     hooks:
       - id: my-custom-sort
-        name: Мой собственный сортировщик импортов
-        entry: ./contents-composite.py
-        language: script
-        files: \.py$
+        name: contents-aggregator
+        entry: "python ./contents-composite.py"
+        language: python
+        args: [--output, t.txt]
