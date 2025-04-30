@@ -137,6 +137,43 @@ class TextRenderer(Renderer):
         raise NotImplementedError
 
 
+class OutputSaver(Protocol):
+    @abstractmethod
+    def __call__(self, output: str):
+        ...
+
+class FileOutputSaver(OutputSaver):
+    def __init__(self, filename: str):
+        self.filename = filename
+
+    def find_tags(self, content: str) -> tuple[int, int]:
+        start = -1
+        end = -1
+        for line in content.splitlines():
+            if line.startswith("<!-- CONTENTS START -->"):
+                start = content.index(line)
+            if line.startswith("<!-- CONTENTS END -->"):
+                end = content.index(line)
+
+        return start, end
+
+    def __call__(self, output: str):
+        with open(self.filename, "rw") as f:
+            content = f.read()
+        start, end = self.find_tags(content)
+
+        if start > end:
+            raise ValueError("Start tag is greater than end tag.")
+
+        if add_tags := any((start < 0, end < 0)):
+            output = "\n<!-- CONTENTS START -->\n" + output + "\n<!-- CONTENTS END -->\n"
+
+        new_content = content[:start] + output + content[end:]
+
+        with open(self.filename, "rw") as f:
+            f.write(new_content)
+
+
 if __name__ == "__main__":
     import argparse
 
