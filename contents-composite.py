@@ -154,8 +154,8 @@ if __name__ == "__main__":
 
     formatted = render(tree, is_links=True, depth=depth)
 
-    if args.output:
-        with open(args.output, 'w') as f:
-            f.write(formatted)
-    else:
-        print(formatted)
+    # if args.output:
+    with open(args.output, 'w') as f:
+        f.write(formatted)
+    # else:
+    #     print(formatted)
