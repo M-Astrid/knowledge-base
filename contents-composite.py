@@ -84,7 +84,7 @@ class Project:
         self.skip_first = skip_first
 
     def get_content(self) -> LeafContent:
-        project = DirectoryLeaf(self.dir_path, "./", max_depth=depth)
+        project = DirectoryLeaf(self.dir_path, ".", max_depth=depth)
         return project.get_content()
 
 
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     depth, format_ = args.depth, args.format
 
     presenter = MDRenderer() if format_ == 'md' else TextRenderer()
-    project = DirectoryLeaf("knowledge_base", "./", max_depth=depth)
+    project = Project("knowledge_base", max_depth=depth)
     tree = project.get_content()
 
     print(presenter(tree, is_links=True, depth=depth))
