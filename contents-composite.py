@@ -1,3 +1,4 @@
+import logging
 import os
 from abc import abstractmethod
 from dataclasses import dataclass, field
@@ -151,26 +152,28 @@ class FileOutputSaver(OutputSaver):
         end = -1
         for line in content.splitlines():
             if line.startswith("<!-- CONTENTS START -->"):
-                start = content.index(line)
+                start = content.index(line) - 1
             if line.startswith("<!-- CONTENTS END -->"):
-                end = content.index(line)
+                end = content.index(line) + len(line)
 
         return start, end
 
     def __call__(self, output: str):
-        with open(self.filename, "rw") as f:
+        with open(self.filename, "r") as f:
             content = f.read()
         start, end = self.find_tags(content)
 
         if start > end:
             raise ValueError("Start tag is greater than end tag.")
 
-        if add_tags := any((start < 0, end < 0)):
-            output = "\n<!-- CONTENTS START -->\n" + output + "\n<!-- CONTENTS END -->\n"
+        no_tags = any((start<0, end<0))
+        before = content if no_tags else content[:start]
+        after = "" if no_tags else content[end:]
 
-        new_content = content[:start] + output + content[end:]
+        output = "\n<!-- CONTENTS START -->\n" + output + "\n<!-- CONTENTS END -->"
+        new_content = before + output + after
 
-        with open(self.filename, "rw") as f:
+        with open(self.filename, "w") as f:
             f.write(new_content)
 
 
@@ -193,8 +196,9 @@ if __name__ == "__main__":
 
     formatted = render(tree, is_links=True, depth=depth)
 
-    if args.output:
-        with open(args.output, 'w') as f:
-            f.write(formatted)
-    else:
-        print(formatted)
+    FileOutputSaver("readme.md")(formatted)
+    # if args.output:
+    #     with open(args.output, 'w') as f:
+    #         f.write(formatted)
+    # else:
+    #     print(formatted)

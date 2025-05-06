@@ -211,8 +211,106 @@ class MyIterator:
 ```
 
 ### Memento
+Design pattern that allows you to save and restore the previous state of an object without revealing the details of its implementation.
 ```python
+import datetime
 
+# 1. Memento
+class EditorMemento:
+    def __init__(self, content):
+        self._content = content
+        self._timestamp = datetime.datetime.now()
+
+    def get_content(self):
+        return self._content
+
+    def get_timestamp(self):
+        return self._timestamp
+
+    def __str__(self):
+        return f"Memento created at: {self._timestamp.strftime('%Y-%m-%d %H:%M:%S')}"
+
+# 2. Originator
+class Editor:
+    def __init__(self):
+        self._content = ""
+
+    def set_content(self, content):
+        print(f"Editor: Setting content to '{content}'")
+        self._content = content
+
+    def get_content(self):
+        return self._content
+
+    def create_memento(self):
+        print("Editor: Creating Memento...")
+        return EditorMemento(self._content)
+
+    def restore_memento(self, memento):
+        print(f"Editor: Restoring content from Memento...")
+        self._content = memento.get_content()
+
+# 3. Caretaker
+class History:
+    def __init__(self):
+        self._mementos = []
+
+    def save(self, editor):
+        memento = editor.create_memento()
+        self._mementos.append(memento)
+        print(f"History: Saved Memento. Total mementos: {len(self._mementos)}")
+
+    def undo(self, editor):
+        if not self._mementos:
+            print("History: No mementos to undo.")
+            return
+
+        # Remove the last saved memento
+        memento = self._mementos.pop()
+        print(f"History: Undoing to previous state. Remaining mementos: {len(self._mementos)}")
+        editor.restore_memento(memento)
+
+    def show_history(self):
+        print("\nHistory of Mementos:")
+        for memento in self._mementos:
+            print(f"- {memento}")
+        print("-" * 20)
+
+# Client Code
+if __name__ == "__main__":
+    editor = Editor()
+    history = History()
+
+    editor.set_content("Initial content.")
+    history.save(editor) # Save the initial state
+
+    editor.set_content("Second version of content.")
+    history.save(editor) # Save the second state
+
+    editor.set_content("Third and final version.")
+    history.save(editor) # Save the third state
+
+    print("\nCurrent Editor Content:", editor.get_content())
+    history.show_history()
+
+    print("\nPerforming Undo...")
+    history.undo(editor)
+    print("Current Editor Content after undo:", editor.get_content())
+    history.show_history()
+
+    print("\nPerforming another Undo...")
+    history.undo(editor)
+    print("Current Editor Content after second undo:", editor.get_content())
+    history.show_history()
+
+    print("\nPerforming one more Undo...")
+    history.undo(editor)
+    print("Current Editor Content after third undo:", editor.get_content())
+    history.show_history()
+
+    print("\nAttempting to Undo with no mementos...")
+    history.undo(editor)
+    print("Current Editor Content after attempted undo:", editor.get_content())
 ```
 
 ### Mediator
@@ -226,6 +324,7 @@ class MyIterator:
 ```
 
 ### State
+
 ```python
 
 ```

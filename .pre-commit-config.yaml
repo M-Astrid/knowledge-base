@@ -9,4 +9,4 @@ repos:
         name: contents-aggregator
         entry: "python ./contents-composite.py"
         language: python
-        args: [--output, contents.txt, --depth, "5"]
+        args: [--output, readme.md, --depth, "5"]
