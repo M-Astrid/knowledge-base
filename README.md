@@ -13,7 +13,7 @@
 :books: Programming theory summary with examples in python/go
 
 ### Contents
-*created by  [path-pixie](https://github.com/path-pixie)* :fairy:
+*created by  [path-pixie](https://github.com/path-pixie)* :fairy:✨
 
 <!-- CONTENTS START -->
 - [knowledge_base](./knowledge_base)  
