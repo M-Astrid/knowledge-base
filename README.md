@@ -10,9 +10,10 @@
 
 ## Knowledge Base 
 
-:books: Programming theory summary with examples in python/golang
+:books: Programming theory summary with examples in python/go
 
 ### Contents
+Created by  [path-pixie](https://github.com/path-pixie) :fairy::magic_wand:
 
 <!-- CONTENTS START -->
 - [knowledge_base](./knowledge_base)  
@@ -27,7 +28,8 @@
   - [go](./knowledge_base/go)  
             - [dependencies.md](./knowledge_base/go/dependencies.md)  
   - [python](./knowledge_base/python)  
-    - [async](./knowledge_base/python/async)   
+    - [async](./knowledge_base/python/async)  
+            - [chat_GPT_coroutines_asincio.pdf](./knowledge_base/python/async/chat_GPT_coroutines_asincio.pdf)  
 
 <!-- CONTENTS END -->
 
