@@ -13,7 +13,7 @@
 :books: Programming theory summary with examples in python/go
 
 ### Contents
-Created by  [path-pixie](https://github.com/path-pixie) :fairy::magic_wand:
+Created by  [path-pixie](https://github.com/path-pixie) :fairy::sparkles:
 
 <!-- CONTENTS START -->
 - [knowledge_base](./knowledge_base)  
