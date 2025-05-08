@@ -27,8 +27,7 @@
   - [go](./knowledge_base/go)  
             - [dependencies.md](./knowledge_base/go/dependencies.md)  
   - [python](./knowledge_base/python)  
-    - [async](./knowledge_base/python/async)  
-            - [chat_GPT_coroutines_asincio.pdf](./knowledge_base/python/async/chat_GPT_coroutines_asincio.pdf)  
+    - [async](./knowledge_base/python/async)   
 
 <!-- CONTENTS END -->
 
