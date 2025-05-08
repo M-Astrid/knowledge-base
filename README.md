@@ -21,6 +21,8 @@
             - [behavioral.md](./knowledge_base/architecture_design/gof_patterns/behavioral.md)  
             - [creational.md](./knowledge_base/architecture_design/gof_patterns/creational.md)  
             - [structural.md](./knowledge_base/architecture_design/gof_patterns/structural.md)  
+  - [brokers](./knowledge_base/brokers)  
+            - [rabbitmq.md](./knowledge_base/brokers/rabbitmq.md)  
   - [devops](./knowledge_base/devops)  
   - [go](./knowledge_base/go)  
             - [dependencies.md](./knowledge_base/go/dependencies.md)  
