@@ -1,8 +1,6 @@
-import logging
 import os
 from abc import abstractmethod
 from dataclasses import dataclass, field
-from pprint import pprint
 from typing import Protocol
 
 
@@ -144,14 +142,19 @@ class OutputSaver(Protocol):
         ...
 
 class FileOutputSaver(OutputSaver):
-    def __init__(self, filename: str):
+    start_tag = "<!-- CONTENTS START -->"
+    end_tag = "<!-- CONTENTS END -->"
+
+    def __init__(self, filename: str, start_tag: str = start_tag, end_tag: str = end_tag):
+        self.start_tag = start_tag
+        self.end_tag = end_tag
         self.filename = filename
 
     def find_tags(self, content: str) -> tuple[int, int]:
         start = -1
         end = -1
         for line in content.splitlines():
-            if line.startswith("<!-- CONTENTS START -->"):
+            if line.startswith(self.start_tag):
                 start = content.index(line) - 1
             if line.startswith("<!-- CONTENTS END -->"):
                 end = content.index(line) + len(line)
@@ -196,9 +199,7 @@ if __name__ == "__main__":
 
     formatted = render(tree, is_links=True, depth=depth)
 
-    FileOutputSaver("readme.md")(formatted)
-    # if args.output:
-    #     with open(args.output, 'w') as f:
-    #         f.write(formatted)
-    # else:
-    #     print(formatted)
+    if args.output:
+        FileOutputSaver("readme.md")(formatted)
+    else:
+        print(formatted)
