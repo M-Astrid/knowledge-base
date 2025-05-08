@@ -10,7 +10,7 @@
 
 ## Knowledge Base 
 
-:books: Programming theory summary with examples in python/go
+:books: Programming theory summary with examples in python/golang
 
 ### Contents
 
