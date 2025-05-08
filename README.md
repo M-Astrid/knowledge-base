@@ -4,7 +4,7 @@
 
 - [Knowledge Base](#knowledge-base)
   - [Contents](#contents)
-  - [Build tree](#build-tree)
+  - [Usage](#usage)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -14,15 +14,25 @@
 
 ### Contents
 
-    knowledge_base
-        ├── architecture_design/
-        |  └── gof_patterns/
-        |     ├── behavioral.md
-        |     ├── creational.md
-        |     └── structural.md
-        ├── go/
-        └── python/
-           └── async/
+<!-- CONTENTS START -->
+- [knowledge_base](./knowledge_base)  
+  - [architecture_design](./knowledge_base/architecture_design)  
+    - [gof_patterns](./knowledge_base/architecture_design/gof_patterns)  
+            - [behavioral.md](./knowledge_base/architecture_design/gof_patterns/behavioral.md)  
+            - [creational.md](./knowledge_base/architecture_design/gof_patterns/creational.md)  
+            - [structural.md](./knowledge_base/architecture_design/gof_patterns/structural.md)  
+  - [brokers](./knowledge_base/brokers)  
+            - [rabbitmq.md](./knowledge_base/brokers/rabbitmq.md)  
+  - [devops](./knowledge_base/devops)  
+  - [go](./knowledge_base/go)  
+            - [dependencies.md](./knowledge_base/go/dependencies.md)  
+  - [python](./knowledge_base/python)  
+    - [async](./knowledge_base/python/async)  
+            - [chat_GPT_coroutines_asincio.pdf](./knowledge_base/python/async/chat_GPT_coroutines_asincio.pdf)  
 
-### Build tree
-` treee -l 4 -o out.txt --base knowledge_base -f`
+<!-- CONTENTS END -->
+
+### Usage
+
+Run ` pre-commit install` and add pages
+

@@ -3,3 +3,10 @@ repos:
     rev: v2.2.0
     hooks:
     -   id: doctoc
+-   repo: local
+    hooks:
+      - id: contents-aggregator
+        name: contents-aggregator
+        entry: "python ./contents-composite.py"
+        language: python
+        args: [--output, readme.md, --depth, "5"]
