@@ -1,5 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-<!-- CONTENTS START -->
+- [Knowledge Base](#knowledge-base)
+  - [Contents](#contents)
+  - [Usage](#usage)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Knowledge Base 
+
+:books: Programming theory summary with examples in python/go
+
+### Contents
+Conjured by [path-pixie](https://github.com/path-pixie) 
+
+<!-- path-pixie contents start -->
 - [knowledge_base](./knowledge_base)  
   - [architecture_design](./knowledge_base/architecture_design)  
     - [gof_patterns](./knowledge_base/architecture_design/gof_patterns)  
@@ -16,4 +32,8 @@
     - [async](./knowledge_base/python/async)  
       - [chat_GPT_coroutines_asincio.pdf](./knowledge_base/python/async/chat_GPT_coroutines_asincio.pdf)  
 
-<!-- CONTENTS END -->
+<!-- path-pixie contents end -->
+
+### Usage
+
+Run ` pre-commit install` and add pages
