@@ -3,10 +3,9 @@ repos:
     rev: v2.2.0
     hooks:
     -   id: doctoc
--   repo: local
+-   repo: https://github.com/M-Astrid/path-pixie
+    rev: 0.2.0
     hooks:
-      - id: contents-aggregator
-        name: contents-aggregator
-        entry: "python ./contents-composite.py"
-        language: python
-        args: [--output, readme.md, --depth, "5"]
+      - id: path-pixie
+        name: path-pixie
+        args: [--output, readme.md, --depth, "5", --root, "knowledge_base", --prefix, "emoji"]
