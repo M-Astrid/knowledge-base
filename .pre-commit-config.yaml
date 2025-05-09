@@ -4,8 +4,8 @@ repos:
     hooks:
     -   id: doctoc
 -   repo: https://github.com/M-Astrid/path-pixie
-    rev: 0.1.3
+    rev: 0.2.0
     hooks:
       - id: path-pixie
         name: path-pixie
-        args: [--output, readme.md, --depth, "5", --root, "knowledge_base"]
+        args: [--output, readme.md, --depth, "5", --root, "knowledge_base", --prefix, "emoji"]

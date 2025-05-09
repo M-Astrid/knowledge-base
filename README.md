@@ -13,23 +13,19 @@
 :books: Programming theory summary with examples in python/go
 
 ### Contents
-Conjured by [path-pixie](https://github.com/path-pixie) 
-
 <!-- path-pixie contents start -->
-- [knowledge_base](./knowledge_base)  
-  - [architecture_design](./knowledge_base/architecture_design)  
-    - [gof_patterns](./knowledge_base/architecture_design/gof_patterns)  
-      - [behavioral.md](./knowledge_base/architecture_design/gof_patterns/behavioral.md)  
-      - [creational.md](./knowledge_base/architecture_design/gof_patterns/creational.md)  
-      - [structural.md](./knowledge_base/architecture_design/gof_patterns/structural.md)  
-  - [brokers](./knowledge_base/brokers)  
-    - [rabbitmq.md](./knowledge_base/brokers/rabbitmq.md)  
-  - [devops](./knowledge_base/devops)  
-  - [go](./knowledge_base/go)  
-    - [dependencies.md](./knowledge_base/go/dependencies.md)  
-    - [round.md](./knowledge_base/go/round.md)  
-  - [python](./knowledge_base/python)  
-    - [async](./knowledge_base/python/async)  
+*Conjured by [path-pixie](https://github.com/path-pixie)*  
+- :file_folder: [knowledge_base](./knowledge_base)  
+  - :file_folder: [architecture_design](./knowledge_base/architecture_design)  
+    - :file_folder: [gof_patterns](./knowledge_base/architecture_design/gof_patterns)  
+  - :file_folder: [brokers](./knowledge_base/brokers)  
+    - :page_facing_up: [rabbitmq](./knowledge_base/brokers/rabbitmq.md)  
+  - :file_folder: [devops](./knowledge_base/devops)  
+  - :file_folder: [go](./knowledge_base/go)  
+    - :page_facing_up: [dependencies](./knowledge_base/go/dependencies.md)  
+    - :page_facing_up: [round](./knowledge_base/go/round.md)  
+  - :file_folder: [python](./knowledge_base/python)  
+    - :file_folder: [async](./knowledge_base/python/async)  
 
 <!-- path-pixie contents end -->
 
