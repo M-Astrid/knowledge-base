@@ -17,7 +17,7 @@
 
 <!-- CONTENTS START -->
 - [knowledge_base](./knowledge_base)  
-  - [architecture_design](./knowledge_base/architecture_design)  
+  - 📁[architecture_design](./knowledge_base/architecture_design)  
     - [gof_patterns](./knowledge_base/architecture_design/gof_patterns)  
             - [behavioral.md](./knowledge_base/architecture_design/gof_patterns/behavioral.md)  
             - [creational.md](./knowledge_base/architecture_design/gof_patterns/creational.md)  
