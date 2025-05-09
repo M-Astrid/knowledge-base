@@ -30,7 +30,6 @@ Conjured by [path-pixie](https://github.com/path-pixie)
     - [round.md](./knowledge_base/go/round.md)  
   - [python](./knowledge_base/python)  
     - [async](./knowledge_base/python/async)  
-      - [chat_GPT_coroutines_asincio.pdf](./knowledge_base/python/async/chat_GPT_coroutines_asincio.pdf)  
 
 <!-- path-pixie contents end -->
 
