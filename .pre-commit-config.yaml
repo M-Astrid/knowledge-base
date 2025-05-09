@@ -4,7 +4,7 @@ repos:
     hooks:
     -   id: doctoc
 -   repo: https://github.com/M-Astrid/path-pixie
-    rev: 0.2.0
+    rev: 0.2.1
     hooks:
       - id: path-pixie
         name: path-pixie
