@@ -1,4 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Knowledge Base](#knowledge-base)
+  - [Contents](#contents)
+  - [Usage](#usage)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Knowledge Base 
+
+:books: Programming theory summary with examples in python/go
+
+### Contents
 <!-- path-pixie contents start -->
 *Conjured by [path-pixie](https://github.com/path-pixie)*  
 - :file_folder: [knowledge_base](./knowledge_base)  
@@ -34,3 +48,7 @@
     - :file_folder: [async](./knowledge_base/python/async)  
 
 <!-- path-pixie contents end -->
+
+### Usage
+
+Run ` pre-commit install` and add pages
